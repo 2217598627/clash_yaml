@@ -39,7 +39,7 @@ dns:
     - tls://doh.360.cn/dns-query
     - tls://dns.alidns.com/dns-query
   nameserver-policy:
-    "rule-set:CN_域,GoogleFCM_域,DouYin_域,Apple_域,Microsoft_域,XiaoHongShu_域":
+    "rule-set:TEST / Domain,Apple-CN / Domain,DouYin_域,Microsoft / Domain,China / Domain":
       - 223.5.5.5
       - 119.29.29.29
       - 114.114.114.114
@@ -60,6 +60,9 @@ tun:
   auto-detect-interface: false
   auto-redirect: false
   strict-route: false
+  route-exclude-address-set:
+    - China / IP
+    
 
 profile:
   store-selected: true

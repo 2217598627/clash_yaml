@@ -14,21 +14,37 @@ log-level: info
 # ========================
 # DNS 设置
 # ========================
+
 dns:
   enable: true
   listen: 0.0.0.0:53
-  ipv6: false
+  ipv6: true
   enhanced-mode: fake-ip
-  fake-ip-range: 198.20.0.1/16
-  nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
-    - 114.114.114.114
-  fake-ip-filter-mode: blacklist
+  fake-ip-range: 198.18.0.0/8
   fake-ip-filter:
-    - +.lan
-    - +.local
-    - geosite:cn
+    - "RULE-SET:TEST / Domain"
+    - "RULE-SET:Apple-CN / Domain"
+    - "RULE-SET:Microsoft / Domain"
+    - "RULE-SET:Direct / Domain"
+    - "RULE-SET:China / Domain"
+    - '+.lan'
+    - 'connect.rom.miui.com'
+    - 'localhost.ptlogin2.qq.com'
+    - "*.msftncsi.com"
+    - "*.msftconnecttest.com"
+  default-nameserver:
+    - 1.1.1.1
+    - 8.8.8.8
+  proxy-server-nameserver:
+    - tls://doh.360.cn/dns-query
+    - tls://dns.alidns.com/dns-query
+  nameserver-policy:
+    "rule-set:CN_域,GoogleFCM_域,DouYin_域,Apple_域,Microsoft_域,XiaoHongShu_域":
+      - 223.5.5.5
+      - 119.29.29.29
+      - 114.114.114.114
+  nameserver:
+    - tls://dns.hk2.627391.xyz
 
 ipv6: false
 

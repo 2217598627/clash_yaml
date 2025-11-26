@@ -1,32 +1,3 @@
-DIRECT: &DIRECT
-    type: select
-    proxies:
-      - DIRECT
-      - 总模式
-      - 延迟最低
-      - 日本自动
-      - 台湾自动
-      - 香港自动
-      - 美国自动
-      - 狮城自动
-      - 其它自动
-      - REJECT
-
-PROXY: &PROXY
-    type: select
-    proxies:
-      - 总模式
-      - 延迟最低
-      - 日本自动
-      - 台湾自动
-      - 香港自动
-      - 美国自动
-      - 狮城自动
-      - 其它自动
-      - DIRECT
-      - REJECT
-
-
 proxy-groups:
   - name: 总模式
     type: select
@@ -41,14 +12,117 @@ proxy-groups:
       - DIRECT
       - REJECT
 
-  - {name: Game, <<: *PROXY}
-  - {name: China, <<: *DIRECT}
-  - {name: TikTok, <<: *PROXY}
-  - {name: Google, <<: *PROXY}
-  - {name: YouTube, <<: *PROXY}
-  - {name: GoogleFCM, <<: *DIRECT}
-  - {name: Telegram, <<: *PROXY}
-  - {name: 漏网之鱼, <<: *PROXY}
+  - name: Game
+    type: select
+    proxies:
+      - 总模式
+      - 延迟最低
+      - 日本自动
+      - 台湾自动
+      - 香港自动
+      - 美国自动
+      - 狮城自动
+      - 其它自动
+      - DIRECT
+      - REJECT
+    
+  - name: China
+    type: select
+    proxies:
+      - DIRECT
+      - 总模式
+      - 延迟最低
+      - 日本自动
+      - 台湾自动
+      - 香港自动
+      - 美国自动
+      - 狮城自动
+      - 其它自动
+      - REJECT
+    
+  - name: TikTok
+    type: select
+    proxies:
+      - 总模式
+      - 延迟最低
+      - 日本自动
+      - 台湾自动
+      - 香港自动
+      - 美国自动
+      - 狮城自动
+      - 其它自动
+      - DIRECT
+      - REJECT
+    
+  - name: Google
+    type: select
+    proxies:
+      - 总模式
+      - 延迟最低
+      - 日本自动
+      - 台湾自动
+      - 香港自动
+      - 美国自动
+      - 狮城自动
+      - 其它自动
+      - DIRECT
+      - REJECT
+    
+  - name: YouTube
+    type: select
+    proxies:
+      - 总模式
+      - 延迟最低
+      - 日本自动
+      - 台湾自动
+      - 香港自动
+      - 美国自动
+      - 狮城自动
+      - 其它自动
+      - DIRECT
+      - REJECT
+    
+  - name: GoogleFCM
+    type: select
+    proxies:
+      - DIRECT
+      - 总模式
+      - 延迟最低
+      - 日本自动
+      - 台湾自动
+      - 香港自动
+      - 美国自动
+      - 狮城自动
+      - 其它自动
+      - REJECT
+    
+  - name: Telegram
+    type: select
+    proxies:
+      - 总模式
+      - 延迟最低
+      - 日本自动
+      - 台湾自动
+      - 香港自动
+      - 美国自动
+      - 狮城自动
+      - 其它自动
+      - DIRECT
+      - REJECT
+
+  - name: 漏网之鱼
+    type: select
+    proxies:
+      - 总模式
+      - 延迟最低
+      - 日本自动
+      - 台湾自动
+      - 香港自动
+      - 美国自动
+      - 狮城自动
+      - 其它自动
+      - DIRECT
+      - REJECT
 
   - name: 延迟最低
     type: url-test

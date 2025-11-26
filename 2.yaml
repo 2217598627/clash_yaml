@@ -1,1 +1,50 @@
+proxy-groups:
+  - name: 总模式
 
+
+
+rule-anchor:
+  Local: &Local
+    {type: file, behavior: classical, format: text}
+  Classical: &Classical
+    {type: http, behavior: classical, format: text, interval: 86400}
+  IPCIDR: &IPCIDR
+    {type: http, behavior: ipcidr, format: mrs, interval: 86400}
+  Domain: &Domain
+    {type: http, behavior: domain, format: mrs, interval: 86400}
+
+
+rule-providers:
+  Google:
+    <<: *Classical
+    path: ./rules/Google_域.list
+    url: "https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@refs/heads/master/Clash/Ruleset/Google.list"
+
+  GoogleFCM:
+    <<: *Classical
+    path: ./rules/GoogleFCM.list
+    url: "https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@refs/heads/master/Clash/Ruleset/GoogleFCM.list"
+
+  YouTube:
+    <<: *Classical
+    path: ./rules/YouTube.list
+    url: "https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@refs/heads/master/Clash/Ruleset/YouTube.listhttps://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Ruleset/YouTube.list
+
+  Telegram:
+    <<: *Classical
+    path: ./rules/Telegram.list
+    url: "https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@refs/heads/master/Clash/Telegram.list
+
+
+  
+
+
+
+
+
+
+
+
+
+
+    

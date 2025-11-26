@@ -15,15 +15,20 @@ rule-anchor:
 
 
 rule-providers:
+ China:
+    <<: *Classical
+    path: ./rules/China.list
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@refs/heads/master/rule/Clash/China/China.list
+
   Google:
     <<: *Classical
     path: ./rules/Google_域.list
-    url: "https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@refs/heads/master/Clash/Ruleset/Google.list"
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@refs/heads/master/rule/Clash/Google/Google.list
 
   GoogleFCM:
     <<: *Classical
     path: ./rules/GoogleFCM.list
-    url: "https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@refs/heads/master/Clash/Ruleset/GoogleFCM.list"
+    url: "https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@refs/heads/master/Clash/Ruleset/GoogleFCM.list
 
   YouTube:
     <<: *Classical

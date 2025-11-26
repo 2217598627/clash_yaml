@@ -1,6 +1,113 @@
+DIRECT: &DIRECT
+    type: select
+    proxies:
+      - DIRECT
+      - 总模式
+      - 延迟最低
+      - 日本自动
+      - 台湾自动
+      - 香港自动
+      - 美国自动
+      - 狮城自动
+      - 其它自动
+      - REJECT
+
+PROXY: &PROXY
+    type: select
+    proxies:
+      - 总模式
+      - 延迟最低
+      - 日本自动
+      - 台湾自动
+      - 香港自动
+      - 美国自动
+      - 狮城自动
+      - 其它自动
+      - DIRECT
+      - REJECT
+
+
 proxy-groups:
   - name: 总模式
+    type: select
+    proxies:
+      - 延迟最低
+      - 日本自动
+      - 台湾自动
+      - 香港自动
+      - 美国自动
+      - 狮城自动
+      - 其它自动
+      - DIRECT
+      - REJECT
 
+  - {name: Game, <<: *PROXY}
+  - {name: China, <<: *DIRECT}
+  - {name: TikTok, <<: *PROXY}
+  - {name: Google, <<: *PROXY}
+  - {name: YouTube, <<: *PROXY}
+  - {name: GoogleFCM, <<: *DIRECT}
+  - {name: Telegram, <<: *PROXY}
+  - {name: 漏网之鱼, <<: *PROXY}
+
+  - name: 延迟最低
+    type: url-test
+    include-all: true
+    interval: 150
+    tolerance: 10
+
+    - name: 日本地区
+    icon: "https://cdn.jsdelivr.net/gh/GitMetaio/Surfing@rm/Home/icon/JP.svg"
+    filter: "^(?=.*(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|[^-]日|JP|Japan)).*$"
+    type: url-test
+    include-all: true
+    interval: 150
+    tolerance: 10
+
+  - name: 中国台湾
+    filter: "^(?=.*(台|新北|彰化|TW|Taiwan|taipei)).*$"
+    type: url-test
+    include-all: true
+    interval: 150
+    tolerance: 10
+
+  - name: 香港地区
+    filter: "^(?=.*(港|HK|hk|Hong Kong|HongKong|hongkong)).*$"
+    type: url-test
+    include-all: true
+    interval: 150
+    tolerance: 10
+
+  - name: 美国地区
+    filter: "^(?=.*(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States)).*$"
+    type: url-test
+    include-all: true
+    interval: 150
+    tolerance: 10
+
+  - name: 狮城地区
+    filter: "^(?=.*(新加坡|坡|狮城|SG|Singapore)).*$"
+    type: url-test
+    include-all: true
+    interval: 150
+    tolerance: 10
+
+  - name: 其它地区
+    filter: "^(?!.*(港|HK|hk|Hong Kong|HongKong|hongkong|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|[^-]日|JP|Japan|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|台|新北|彰化|TW|Taiwan|新加坡|坡|狮城|SG|Singapore|灾|网易|Netease|套餐|重置|剩余|到期|订阅|群|账户|流量|有效期|时间|官网|拒绝|DNS|Ch|网址|售|防失)).*$"
+    type: url-test
+    include-all: true
+    interval: 150
+    tolerance: 10
+
+
+rules:
+  - RULE-SET,Game,Game
+  - RULE-SET,TikTok,TikTok
+  - RULE-SET,YouTube,YouTube
+  - RULE-SET,GoogleFCM,GoogleFCM
+  - RULE-SET,Google,Google
+  - RULE-SET,China,China
+  - MATCH,漏网之鱼
 
 
 rule-anchor:
@@ -15,41 +122,42 @@ rule-anchor:
 
 
 rule-providers:
- China:
+  China:
     <<: *Classical
-    path: ./rules/China.list
-    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@refs/heads/master/rule/Clash/China/China.list
+    path: ./rules/China.yaml
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@refs/heads/master/rule/Clash/China/China.yaml"
 
   Google:
     <<: *Classical
-    path: ./rules/Google_域.list
-    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@refs/heads/master/rule/Clash/Google/Google.list
+    path: ./rules/Google.yaml
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@refs/heads/master/rule/Clash/Google/Google.yaml"
 
   GoogleFCM:
     <<: *Classical
-    path: ./rules/GoogleFCM.list
-    url: "https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@refs/heads/master/Clash/Ruleset/GoogleFCM.list
+    path: ./rules/GoogleFCM.yaml
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@refs/heads/master/rule/Clash/GoogleFCM/GoogleFCM.yaml"
 
   YouTube:
     <<: *Classical
-    path: ./rules/YouTube.list
-    url: "https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@refs/heads/master/Clash/Ruleset/YouTube.listhttps://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Ruleset/YouTube.list
+    path: ./rules/YouTube.yaml
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@refs/heads/master/rule/Clash/YouTube/YouTube.yaml"
 
   Telegram:
     <<: *Classical
-    path: ./rules/Telegram.list
-    url: "https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@refs/heads/master/Clash/Telegram.list
+    path: ./rules/Telegram.yaml
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@refs/heads/master/rule/Clash/Telegram/Telegram.yaml"
 
+  TikTok:
+    <<: *Classical
+    path: ./rules/TikTok.yaml
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@refs/heads/master/rule/Clash/TikTok/TikTok.yaml"
 
-  
+  Game01:
+    <<: *Classical
+    path: ./rules/Game01.yaml
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@refs/heads/master/rule/Clash/Game/Game.yaml"
 
-
-
-
-
-
-
-
-
-
-    
+  Game02:
+    <<: *Classical
+    path: ./rules/Game02.yaml
+    url: "https://cdn.jsdelivr.net/gh/2217598627/clash_yaml@refs/heads/main/rules/Game.yaml"  

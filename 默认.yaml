@@ -353,7 +353,6 @@ A: &A
 proxy-groups:
   - type: select
     name: 🚀 节点选择
-    include-all: true
     proxies:
       - DIRECT
       - ⚡ 自动选择

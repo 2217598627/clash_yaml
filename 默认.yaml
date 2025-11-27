@@ -382,7 +382,7 @@ proxy-groups:
 
   - name: ⚡ 自动选择
     type: url-test
-    url: https://www.gstatic.com/generate_204
+    url: http://www.google.com/generate_204
     include-all: true
     interval: 300
     lazy: false
@@ -391,7 +391,7 @@ proxy-groups:
     icon: "https://cdn.jsdelivr.net/gh/GitMetaio/Surfing@rm/Home/icon/JP.svg"
     filter: "^(?=.*(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|[^-]日|JP|Japan)).*$"
     type: url-test
-    url: https://www.gstatic.com/generate_204
+    url: http://www.google.com/generate_204
     include-all: true
     interval: 300
     lazy: false
@@ -400,7 +400,7 @@ proxy-groups:
     icon: "https://cdn.jsdelivr.net/gh/GitMetaio/Surfing@rm/Home/icon/CN.svg"
     filter: "^(?=.*(台|新北|彰化|TW|Taiwan|taipei)).*$"
     type: url-test
-    url: https://www.gstatic.com/generate_204
+    url: http://www.google.com/generate_204
     include-all: true
     interval: 300
     lazy: false
@@ -409,7 +409,7 @@ proxy-groups:
     icon: "https://cdn.jsdelivr.net/gh/GitMetaio/Surfing@rm/Home/icon/HK.svg"
     filter: "^(?=.*(港|HK|hk|Hong Kong|HongKong|hongkong)).*$"
     type: url-test
-    url: https://www.gstatic.com/generate_204
+    url: http://www.google.com/generate_204
     include-all: true
     interval: 300
     lazy: false
@@ -418,7 +418,7 @@ proxy-groups:
     icon: "https://cdn.jsdelivr.net/gh/GitMetaio/Surfing@rm/Home/icon/US.svg"
     filter: "^(?=.*(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States)).*$"
     type: url-test
-    url: https://www.gstatic.com/generate_204
+    url: http://www.google.com/generate_204
     include-all: true
     interval: 300
     lazy: false
@@ -427,7 +427,7 @@ proxy-groups:
     icon: "https://cdn.jsdelivr.net/gh/GitMetaio/Surfing@rm/Home/icon/Singapore.svg"
     filter: "^(?=.*(新加坡|坡|狮城|SG|Singapore)).*$"
     type: url-test
-    url: https://www.gstatic.com/generate_204
+    url: http://www.google.com/generate_204
     include-all: true
     interval: 300
     lazy: false
@@ -436,7 +436,7 @@ proxy-groups:
     icon: "https://cdn.jsdelivr.net/gh/GitMetaio/Surfing@rm/Home/icon/Globe.svg"
     filter: "^(?!.*(港|HK|hk|Hong Kong|HongKong|hongkong|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|[^-]日|JP|Japan|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|台|新北|彰化|TW|Taiwan|新加坡|坡|狮城|SG|Singapore|灾|网易|Netease|套餐|重置|剩余|到期|订阅|群|账户|流量|有效期|时间|官网|拒绝|DNS|Ch|网址|售|防失|dns|DNS|直连|拒绝|拦截)).*$"
     type: url-test
-    url: https://www.gstatic.com/generate_204
+    url: http://www.google.com/generate_204
     include-all: true
     interval: 300
     lazy: false

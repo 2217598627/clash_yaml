@@ -277,20 +277,20 @@ rule-providers:
   cn_ip:
     <<: *ip
     url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs"
-    path: ./rules/private_domain.mrs
+    path: ./rules/cn_ip.mrs
   google_ip:
     <<: *ip
     url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs"
-    path: ./rules/private_domain.mrs
+    path: ./rules/google_ip.mrs
   netflix_ip:
     <<: *ip
     url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs"
-    path: ./rules/private_domain.mrs
+    path: ./rules/netflix_ip.mrs
   twitter_ip:
     <<: *ip
     url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/twitter.mrs"
-    path: ./rules/private_domain.mrs
+    path: ./rules/ twitter_ip.mrs
   telegram_ip:
     <<: *ip
     url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"
-    path: ./rules/private_domain.mrs
+    path: ./rules/telegram_ip.mrs

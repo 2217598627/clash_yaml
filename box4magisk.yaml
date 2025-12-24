@@ -256,24 +256,24 @@ rule-providers:
   bahamut_domain:
     <<: *domain
     url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bahamut.mrs"
-    path: ./rules/private_domain.mrs
+    path: ./rules/bahamut_domain.mrs
   spotify_domain:
     <<: *domain
     url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/spotify.mrs"
-    path: ./rules/private_domain.mrs
+    path: ./rules/spotify_domain.mrs
   pixiv_domain:
     <<: *domain
     url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/pixiv.mrs"
-    path: ./rules/private_domain.mrs
+    path: ./rules/pixiv_domain.mrs
   geolocation-!cn:
     <<: *domain
     url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs"
-    path: ./rules/private_domain.mrs
+    path: ./rules/geolocation-!cn.mrs
 
   private_ip:
     <<: *ip
     url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.mrs"
-    path: ./rules/private_domain.mrs
+    path: ./rules/private_ip.mrs
   cn_ip:
     <<: *ip
     url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs"
